@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Asmetrystream — Choisissez votre offre.</title>
+<meta name="description" content="Netflix en illimité pendant 12 mois — HD à 3 000 FCFA ou 4K à 5 000 FCFA, réglé une seule fois." />
+<meta name="theme-color" content="#fafafa" />
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+<style>
+  :root {
+    --ink: #fafafa;
+    --text: #0a0a0a;
+    --gray: #6b6b70;
+    --gray-dim: #98989d;
+    --line: rgba(0,0,0,0.10);
+    --red: #e4142c;
+    --red-dim: #9c0e1f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  nav { padding: 22px 0; border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+  .brand span { color: var(--red); }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .theme-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
+  .back-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
+
+  .hero { padding: 56px 0 24px; }
+  h1 {
+    font-size: clamp(30px, 6.5vw, 42px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -1px;
+    max-width: 15ch;
+    color: var(--text);
+  }
+  .lead {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--gray);
+    max-width: 42ch;
+  }
+
+  .price-options {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-bottom: 8px;
+  }
+  @media (min-width: 560px) {
+    .price-options { grid-template-columns: 1fr 1fr; }
+  }
+  .price-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px;
+  }
+  .price-card-label { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gray); }
+  .price-card-amount { margin-top: 8px; font-size: 32px; font-weight: 800; letter-spacing: -0.8px; color: var(--text); }
+  .price-card-detail { margin-top: 4px; font-size: 13.5px; color: var(--gray); }
+  .price-card .btn { margin-top: 16px; max-width: none; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-red { background: var(--red); color: #fff; box-shadow: 0 10px 24px rgba(228,20,44,0.25); }
+  .micro { margin-top: 16px; font-size: 12.5px; color: var(--gray-dim); text-align: center; }
+
+  footer { padding: 30px 0 36px; border-top: 1px solid var(--line); margin-top: 40px; }
+  footer .wrap { text-align: center; }
+  .footer-fine { font-size: 12px; color: var(--gray-dim); }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Asmetry<span>stream</span></div>
+    <div class="nav-right">
+      <a class="theme-link" href="offres-dark.html">Mode sombre</a>
+      <a class="back-link" href="index.html">← Retour</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap reveal">
+    <h1>Choisissez votre offre.</h1>
+    <p class="lead">Deux qualités, un seul paiement, douze mois d'accès. Choisissez celle qui vous convient.</p>
+
+    <div class="price-options">
+      <div class="price-card">
+        <div class="price-card-label">HD</div>
+        <div class="price-card-amount">3 000 FCFA</div>
+        <div class="price-card-detail">Qualité HD — 12 mois d'accès</div>
+        <a class="btn btn-red" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Profiter de l'offre</a>
+      </div>
+      <div class="price-card">
+        <div class="price-card-label">4K Ultra HD</div>
+        <div class="price-card-amount">5 000 FCFA</div>
+        <div class="price-card-detail">Qualité 4K — 12 mois d'accès</div>
+        <a class="btn btn-red" href="https://pay.jeko.africa/pl/REMPLACER_PAR_LE_LIEN_5000F" target="_blank" rel="noopener">Profiter de l'offre</a>
+      </div>
+    </div>
+    <p class="micro">Paiement sécurisé par Mobile Money.</p>
+  </div>
+</header>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-fine">© <span id="year"></span> Asmetrystream.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+  revealEls.forEach(function (el) { io.observe(el); });
+  setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('in'); }); }, 2000);
+</script>
+</body>
+</html>
