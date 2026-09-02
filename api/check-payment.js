@@ -1,0 +1,33 @@
+const { normalizePhone } = require('./_lib/phone');
+const { kvGet } = require('./_lib/kv');
+
+module.exports = async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+
+  const phoneRaw = (req.query && req.query.phone) || '';
+  const phone = normalizePhone(phoneRaw);
+
+  if (phone.length !== 10) {
+    res.status(400).json({ error: 'invalid phone' });
+    return;
+  }
+
+  try {
+    const result = await kvGet('netflix:paid:' + phone);
+    console.log('check-payment looked up netflix:paid:' + phone, '-> result:', result);
+    if (!result) {
+      res.status(200).json({ paid: false });
+      return;
+    }
+    let details = {};
+    try {
+      details = JSON.parse(result);
+    } catch (e) {
+      // Older/plain values — still counts as paid.
+    }
+    res.status(200).json({ paid: true, value: details.value, currency: details.currency });
+  } catch (err) {
+    console.error('check-payment KV error:', err);
+    res.status(200).json({ paid: false });
+  }
+};

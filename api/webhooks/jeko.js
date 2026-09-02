@@ -1,0 +1,88 @@
+// Upstash KV — see api/_lib/kv.js. Keys are namespaced under "netflix:" so this can safely
+// share the same KV store as the Asmetry projects without colliding on a phone number that
+// pays for both products.
+const crypto = require('crypto');
+const { normalizePhone } = require('../_lib/phone');
+const { kvSet } = require('../_lib/kv');
+
+module.exports.config = {
+  api: { bodyParser: false },
+};
+
+function readRawBody(req) {
+  return new Promise((resolve, reject) => {
+    let data = '';
+    req.on('data', (chunk) => { data += chunk; });
+    req.on('end', () => resolve(data));
+    req.on('error', reject);
+  });
+}
+
+module.exports = async (req, res) => {
+  if (req.method !== 'POST') {
+    res.status(405).send('Method not allowed');
+    return;
+  }
+
+  if (!process.env.JEKO_WEBHOOK_SECRET) {
+    console.error('JEKO_WEBHOOK_SECRET is not set in Vercel env vars');
+    res.status(500).send('Webhook not configured');
+    return;
+  }
+
+  const rawBody = await readRawBody(req);
+
+  const signature = req.headers['jeko-signature'];
+  const expected = crypto
+    .createHmac('sha256', process.env.JEKO_WEBHOOK_SECRET)
+    .update(rawBody)
+    .digest('hex');
+
+  if (!signature || signature !== expected) {
+    res.status(401).send('Invalid signature');
+    return;
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(rawBody);
+  } catch (e) {
+    console.error('Invalid JSON from Jèko webhook');
+    res.status(200).send('OK');
+    return;
+  }
+
+  if (payload.status !== 'success' || payload.transactionType !== 'payment') {
+    res.status(200).send('OK');
+    return;
+  }
+
+  const rawPhone = payload.counterpartIdentifier || payload.counterpartLabel || null;
+
+  const amountCents = Number(payload.amount && payload.amount.amount);
+  const currency = (payload.amount && payload.amount.currency) || 'XOF';
+  const value = amountCents / 100;
+
+  if (rawPhone) {
+    const phone = normalizePhone(rawPhone);
+    console.log('Extracted phone from webhook:', rawPhone, '-> normalized:', phone);
+    if (phone.length === 10) {
+      try {
+        await kvSet(
+          'netflix:paid:' + phone,
+          JSON.stringify({ id: payload.id || '1', value: value, currency: currency }),
+          86400
+        );
+        console.log('Stored in KV under key netflix:paid:' + phone);
+      } catch (err) {
+        console.error('Failed to store paid phone in KV:', err && err.message);
+      }
+    } else {
+      console.error('Normalized phone has unexpected length:', phone);
+    }
+  } else {
+    console.error('No phone number field found in Jèko payload — check the logged payload above.');
+  }
+
+  res.status(200).send('OK');
+};

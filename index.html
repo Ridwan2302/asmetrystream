@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Asmetrystream — Netflix, un an, un seul paiement.</title>
+<meta name="description" content="Un accès Netflix illimité pendant 12 mois pour 3 000 FCFA. Un seul paiement, aucun renouvellement à gérer." />
+<meta name="theme-color" content="#0b0b0c" />
+
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+<style>
+  :root {
+    --ink: #0b0b0c;
+    --paper: #121214;
+    --white: #ffffff;
+    --gray: #98989d;
+    --gray-dim: #6e6e73;
+    --line: rgba(255,255,255,0.10);
+    --gold: #c9a24a;
+    --gold-dim: #8a7238;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  nav { padding: 22px 0; border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
+  .brand span { color: var(--gold); }
+  .nav-cta {
+    font-size: 13px; font-weight: 600; color: #fff; text-decoration: none;
+    padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line);
+  }
+
+  .hero { padding: 64px 0 40px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); }
+  h1 {
+    margin-top: 14px;
+    font-size: clamp(34px, 7vw, 50px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    max-width: 15ch;
+  }
+  .lead {
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--gray);
+    max-width: 46ch;
+  }
+
+  .price-row {
+    margin-top: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .price-amount { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
+  .price-unit { font-size: 14px; color: var(--gray); }
+
+  .cta-row { margin-top: 26px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 340px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-gold { background: var(--gold); color: #1a1405; }
+  .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); }
+
+  .frame {
+    margin-top: 48px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%),
+      repeating-linear-gradient(100deg, #17171a 0 3px, #1c1c20 3px 6px);
+    position: relative;
+  }
+  .frame .row { position: absolute; left: 20px; right: 20px; display: flex; gap: 10px; }
+  .frame .row:nth-child(1) { top: 24px; }
+  .frame .row:nth-child(2) { top: 66px; }
+  .frame .row:nth-child(3) { top: 108px; }
+  .frame .tile { flex: 1; aspect-ratio: 2/3; border-radius: 6px; background: #26262b; border: 1px solid rgba(255,255,255,0.06); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gray-dim); }
+  h2 { margin-top: 10px; font-size: clamp(24px, 4.5vw, 30px); font-weight: 800; letter-spacing: -0.4px; max-width: 20ch; }
+
+  .steps { margin-top: 34px; }
+  .step { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .step:first-child { border-top: none; }
+  .step-num { font-size: 13px; font-weight: 700; color: var(--gold); width: 22px; flex-shrink: 0; padding-top: 2px; }
+  .step-title { font-size: 17px; font-weight: 700; }
+  .step-body { margin-top: 4px; font-size: 15px; line-height: 1.55; color: var(--gray); max-width: 44ch; }
+
+  .includes { margin-top: 30px; display: flex; flex-direction: column; gap: 0; }
+  .includes li { list-style: none; display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 15.5px; color: #e5e5e7; }
+  .includes li:first-child { border-top: none; }
+  .includes li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 700; }
+
+  .faq-item { padding: 22px 0; border-top: 1px solid var(--line); }
+  .faq-item:first-child { border-top: none; }
+  .faq-q { font-size: 16px; font-weight: 700; }
+  .faq-a { margin-top: 8px; font-size: 15px; line-height: 1.6; color: var(--gray); max-width: 48ch; }
+
+  .final-cta { text-align: center; padding: 64px 0 72px; }
+  .final-cta h2 { margin: 0 auto; text-align: center; }
+  .final-cta .lead { margin-left: auto; margin-right: auto; text-align: center; }
+  .final-cta .cta-row { display: flex; justify-content: center; }
+
+  footer { padding: 32px 0 40px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+  .footer-fine { font-size: 12px; color: var(--gray-dim); }
+  .whatsapp-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; color: var(--gray);
+    text-decoration: none; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line);
+  }
+  .whatsapp-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Asmetry<span>stream</span></div>
+    <a class="nav-cta" href="unlock.html">Voir l'offre</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap reveal">
+    <div class="kicker">Accès 12 mois</div>
+    <h1>Netflix, toute l'année. Un seul paiement.</h1>
+    <p class="lead">Films, séries, illimité — pendant 12 mois, pour un montant fixe payé une seule fois. Pas d'abonnement à surveiller, pas de carte à enregistrer.</p>
+
+    <div class="price-row">
+      <div class="price-amount">3 000 FCFA</div>
+      <div class="price-unit">— accès 12 mois</div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="unlock.html">Obtenir mon accès</a>
+      <p class="micro">Paiement sécurisé par Mobile Money. Accès envoyé sur WhatsApp après paiement.</p>
+    </div>
+
+    <div class="frame" aria-hidden="true">
+      <div class="row"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div></div>
+      <div class="row"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div></div>
+      <div class="row"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap reveal">
+    <div class="section-kicker">Comment ça marche</div>
+    <h2>Trois étapes, quelques minutes.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Vous payez une fois</div>
+          <p class="step-body">3 000 FCFA, par Mobile Money, en toute sécurité. Aucun renouvellement, aucun prélèvement plus tard.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Vous recevez votre accès</div>
+          <p class="step-body">Sur WhatsApp, en général en quelques minutes après le paiement.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Vous regardez, toute l'année</div>
+          <p class="step-body">Films et séries en illimité pendant 12 mois complets, sans y repenser.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="section-kicker">Ce qui est inclus</div>
+    <h2>Ce que vous obtenez exactement.</h2>
+    <ul class="includes">
+      <li>Un profil qui vous est dédié, avec votre propre historique et vos propres recommandations</li>
+      <li>Accès illimité pendant 12 mois complets, sans interruption</li>
+      <li>Support par WhatsApp pendant toute la durée si un problème survient</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="section-kicker">Questions fréquentes</div>
+    <h2>Avant de vous lancer.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">C'est fiable ?</div>
+        <p class="faq-a">Oui — c'est un accès à un profil dédié sur un compte partagé, une pratique courante. Vous payez une seule fois et gardez le contact WhatsApp pour toute la durée.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Que se passe-t-il si l'accès ne fonctionne plus pendant les 12 mois ?</div>
+        <p class="faq-a">Vous nous écrivez sur WhatsApp et on corrige ça rapidement. C'est couvert par votre paiement, sans frais supplémentaire.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Combien de temps avant de recevoir mon accès ?</div>
+        <p class="faq-a">Quelques minutes en général après confirmation du paiement, rarement plus de quelques heures.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quels moyens de paiement acceptez-vous ?</div>
+        <p class="faq-a">Mobile Money (Orange Money, MTN, Moov, Wave, et autres), en un paiement unique et sécurisé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap reveal">
+    <h2>Prêt pour une année sans y penser ?</h2>
+    <p class="lead">3 000 FCFA, un seul paiement, 12 mois d'accès.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="unlock.html">Obtenir mon accès</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="whatsapp-link" href="https://wa.me/2250759351602" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm5.79 14.11c-.24.68-1.4 1.31-1.93 1.35-.5.05-1.06.28-3.6-.75-3.05-1.23-5-4.25-5.15-4.45-.15-.2-1.23-1.63-1.23-3.11s.78-2.22 1.06-2.52c.28-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.44-.07.68.53.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.3.75 1.24 1.62 2.01 1.12.99 2.06 1.3 2.36 1.45.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.68-.15.28.1 1.79.85 2.1 1 .3.15.5.23.58.36.08.13.08.75-.15 1.43z"/></svg>
+      Contactez-nous
+    </a>
+    <div class="footer-fine">© <span id="year"></span> Asmetrystream. Service indépendant, non affilié à Netflix.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+  revealEls.forEach(function (el) { io.observe(el); });
+  setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('in'); }); }, 2000);
+</script>
+</body>
+</html>
