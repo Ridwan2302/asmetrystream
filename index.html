@@ -11,7 +11,6 @@
 <style>
   :root {
     --ink: #0a0a0a;
-    --card: #131315;
     --white: #ffffff;
     --gray: #a8a8ad;
     --gray-dim: #6b6b70;
@@ -41,14 +40,10 @@
     padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line);
     cursor: pointer; background: none;
   }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .theme-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
 
-  .hero { padding: 72px 0 48px; position: relative; overflow: hidden; }
-  .glow {
-    position: absolute; top: -120px; right: -120px; width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(228,20,44,0.28) 0%, rgba(228,20,44,0) 70%);
-    pointer-events: none; z-index: 0;
-  }
-  .hero .wrap > * { position: relative; z-index: 1; }
+  .hero { padding: 72px 0 48px; }
 
   .kicker {
     display: inline-block;
@@ -72,17 +67,13 @@
   }
 
   .price-row {
-    margin-top: 30px;
-    display: inline-flex;
+    margin-top: 28px;
+    display: flex;
     align-items: baseline;
     gap: 10px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 16px 22px;
   }
-  .price-amount { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; color: #fff; }
-  .price-unit { font-size: 13px; color: var(--gray); }
+  .price-amount { font-size: 42px; font-weight: 800; letter-spacing: -1px; color: #fff; }
+  .price-unit { font-size: 14px; color: var(--gray); }
 
   .cta-row { margin-top: 24px; }
   .btn {
@@ -109,29 +100,22 @@
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
   h2 { margin-top: 8px; font-size: clamp(24px, 4.5vw, 32px); font-weight: 800; letter-spacing: -0.6px; }
 
-  .card-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 12px; }
-  @media (min-width: 640px) { .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+  .steps { margin-top: 30px; }
+  .step { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .step:first-child { border-top: none; }
+  .step-num { font-size: 14px; font-weight: 800; color: var(--red); width: 26px; flex-shrink: 0; }
+  .step-title { font-size: 16px; font-weight: 700; }
+  .step-body { margin-top: 4px; font-size: 14.5px; line-height: 1.5; color: var(--gray); }
 
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 22px;
-  }
-  .step-num { font-size: 13px; font-weight: 800; color: var(--red); }
-  .step-title { margin-top: 10px; font-size: 16px; font-weight: 700; }
-  .step-body { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--gray); }
+  .includes { margin-top: 26px; }
+  .includes li { list-style: none; display: flex; gap: 12px; padding: 15px 0; font-size: 15px; color: #e5e5e7; border-top: 1px solid var(--line); }
+  .includes li:first-child { border-top: none; }
+  .includes li::before { content: '—'; color: var(--red); flex-shrink: 0; font-weight: 700; }
 
-  .includes-card { padding: 6px 22px; }
-  .includes-card li { list-style: none; display: flex; gap: 12px; padding: 16px 0; font-size: 15px; color: #e5e5e7; border-top: 1px solid var(--line); }
-  .includes-card li:first-child { border-top: none; }
-  .includes-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 8px; }
-
-  .faq-card { padding: 4px 22px; }
   .faq-item { padding: 20px 0; border-top: 1px solid var(--line); }
   .faq-item:first-child { border-top: none; }
-  .faq-q { font-size: 15px; font-weight: 700; }
-  .faq-a { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--gray); }
+  .faq-q { font-size: 15.5px; font-weight: 700; }
+  .faq-a { margin-top: 5px; font-size: 14.5px; line-height: 1.5; color: var(--gray); }
 
   .final-cta { text-align: center; padding: 56px 0 64px; }
   .final-cta h2 { margin: 0 auto; }
@@ -151,12 +135,14 @@
 <nav>
   <div class="wrap">
     <div class="brand">Asmetry<span>stream</span></div>
-    <button type="button" class="nav-cta pay-cta">Payer</button>
+    <div class="nav-right">
+      <a class="theme-link" href="bright.html">Mode clair</a>
+      <button type="button" class="nav-cta pay-cta">Payer</button>
+    </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="glow" aria-hidden="true"></div>
   <div class="wrap reveal">
     <div class="kicker">12 mois d'accès</div>
     <h1>Douze mois de Netflix. Sans détour.</h1>
@@ -179,21 +165,27 @@
     <div class="section-kicker">Comment ça marche</div>
     <h2>Trois étapes.</h2>
 
-    <div class="card-grid cols-3">
-      <div class="card">
+    <div class="steps">
+      <div class="step">
         <div class="step-num">01</div>
-        <div class="step-title">Réglez 3 000 FCFA</div>
-        <p class="step-body">Par Mobile Money, en toute sécurité.</p>
+        <div>
+          <div class="step-title">Réglez 3 000 FCFA</div>
+          <p class="step-body">Par Mobile Money, en toute sécurité.</p>
+        </div>
       </div>
-      <div class="card">
+      <div class="step">
         <div class="step-num">02</div>
-        <div class="step-title">Recevez votre accès</div>
-        <p class="step-body">En quelques minutes.</p>
+        <div>
+          <div class="step-title">Recevez votre accès</div>
+          <p class="step-body">En quelques minutes.</p>
+        </div>
       </div>
-      <div class="card">
+      <div class="step">
         <div class="step-num">03</div>
-        <div class="step-title">Profitez, toute l'année</div>
-        <p class="step-body">Illimité, sans interruption.</p>
+        <div>
+          <div class="step-title">Profitez, toute l'année</div>
+          <p class="step-body">Illimité, sans interruption.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -203,13 +195,11 @@
   <div class="wrap reveal">
     <div class="section-kicker">Ce qui est inclus</div>
     <h2>L'essentiel, sans superflu.</h2>
-    <div class="card includes-card" style="margin-top: 28px;">
-      <ul>
-        <li>Un profil dédié, avec votre historique</li>
-        <li>Douze mois d'accès continu</li>
-        <li>Un support disponible en cas de besoin</li>
-      </ul>
-    </div>
+    <ul class="includes">
+      <li>Un profil dédié, avec votre historique</li>
+      <li>Douze mois d'accès continu</li>
+      <li>Un support disponible en cas de besoin</li>
+    </ul>
   </div>
 </section>
 
@@ -217,7 +207,7 @@
   <div class="wrap reveal">
     <div class="section-kicker">Questions</div>
     <h2>En bref.</h2>
-    <div class="card faq-card" style="margin-top: 28px;">
+    <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">C'est fiable ?</div>
         <p class="faq-a">Oui — un profil dédié sur un compte partagé, une pratique courante et éprouvée.</p>

@@ -11,14 +11,12 @@
 <style>
   :root {
     --ink: #fafafa;
-    --card: #ffffff;
     --text: #0a0a0a;
     --gray: #6b6b70;
     --gray-dim: #98989d;
-    --line: rgba(0,0,0,0.08);
+    --line: rgba(0,0,0,0.10);
     --red: #e4142c;
     --red-dim: #9c0e1f;
-    --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -31,25 +29,21 @@
   }
   img { display: block; max-width: 100%; }
   a { color: inherit; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; position: relative; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
   nav { padding: 22px 0; border-bottom: 1px solid var(--line); }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; }
   .brand { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
   .brand span { color: var(--red); }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .theme-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
   .nav-cta {
     font-size: 13px; font-weight: 600; color: var(--text); text-decoration: none;
     padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line);
     cursor: pointer; background: none;
   }
 
-  .hero { padding: 72px 0 48px; position: relative; overflow: hidden; }
-  .glow {
-    position: absolute; top: -140px; right: -140px; width: 460px; height: 460px;
-    background: radial-gradient(circle, rgba(228,20,44,0.14) 0%, rgba(228,20,44,0) 70%);
-    pointer-events: none; z-index: 0;
-  }
-  .hero .wrap > * { position: relative; z-index: 1; }
+  .hero { padding: 72px 0 48px; }
 
   .kicker {
     display: inline-block;
@@ -74,18 +68,13 @@
   }
 
   .price-row {
-    margin-top: 30px;
-    display: inline-flex;
+    margin-top: 28px;
+    display: flex;
     align-items: baseline;
     gap: 10px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 16px 22px;
-    box-shadow: var(--shadow);
   }
-  .price-amount { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; color: var(--text); }
-  .price-unit { font-size: 13px; color: var(--gray); }
+  .price-amount { font-size: 42px; font-weight: 800; letter-spacing: -1px; color: var(--text); }
+  .price-unit { font-size: 14px; color: var(--gray); }
 
   .cta-row { margin-top: 24px; }
   .btn {
@@ -105,37 +94,29 @@
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-red { background: var(--red); color: #fff; box-shadow: 0 10px 24px rgba(228,20,44,0.28); }
+  .btn-red { background: var(--red); color: #fff; box-shadow: 0 10px 24px rgba(228,20,44,0.25); }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); }
 
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
   h2 { margin-top: 8px; font-size: clamp(24px, 4.5vw, 32px); font-weight: 800; letter-spacing: -0.6px; color: var(--text); }
 
-  .card-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 12px; }
-  @media (min-width: 640px) { .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+  .steps { margin-top: 30px; }
+  .step { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .step:first-child { border-top: none; }
+  .step-num { font-size: 14px; font-weight: 800; color: var(--red); width: 26px; flex-shrink: 0; }
+  .step-title { font-size: 16px; font-weight: 700; color: var(--text); }
+  .step-body { margin-top: 4px; font-size: 14.5px; line-height: 1.5; color: var(--gray); }
 
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: var(--shadow);
-  }
-  .step-num { font-size: 13px; font-weight: 800; color: var(--red); }
-  .step-title { margin-top: 10px; font-size: 16px; font-weight: 700; color: var(--text); }
-  .step-body { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--gray); }
+  .includes { margin-top: 26px; }
+  .includes li { list-style: none; display: flex; gap: 12px; padding: 15px 0; font-size: 15px; color: var(--text); border-top: 1px solid var(--line); }
+  .includes li:first-child { border-top: none; }
+  .includes li::before { content: '—'; color: var(--red); flex-shrink: 0; font-weight: 700; }
 
-  .includes-card { padding: 6px 22px; }
-  .includes-card li { list-style: none; display: flex; gap: 12px; padding: 16px 0; font-size: 15px; color: var(--text); border-top: 1px solid var(--line); }
-  .includes-card li:first-child { border-top: none; }
-  .includes-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 8px; }
-
-  .faq-card { padding: 4px 22px; }
   .faq-item { padding: 20px 0; border-top: 1px solid var(--line); }
   .faq-item:first-child { border-top: none; }
-  .faq-q { font-size: 15px; font-weight: 700; color: var(--text); }
-  .faq-a { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--gray); }
+  .faq-q { font-size: 15.5px; font-weight: 700; color: var(--text); }
+  .faq-a { margin-top: 5px; font-size: 14.5px; line-height: 1.5; color: var(--gray); }
 
   .final-cta { text-align: center; padding: 56px 0 64px; }
   .final-cta h2 { margin: 0 auto; }
@@ -155,12 +136,14 @@
 <nav>
   <div class="wrap">
     <div class="brand">Asmetry<span>stream</span></div>
-    <button type="button" class="nav-cta pay-cta">Payer</button>
+    <div class="nav-right">
+      <a class="theme-link" href="index.html">Mode sombre</a>
+      <button type="button" class="nav-cta pay-cta">Payer</button>
+    </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="glow" aria-hidden="true"></div>
   <div class="wrap reveal">
     <div class="kicker">12 mois d'accès</div>
     <h1>Douze mois de Netflix. Sans détour.</h1>
@@ -183,21 +166,27 @@
     <div class="section-kicker">Comment ça marche</div>
     <h2>Trois étapes.</h2>
 
-    <div class="card-grid cols-3">
-      <div class="card">
+    <div class="steps">
+      <div class="step">
         <div class="step-num">01</div>
-        <div class="step-title">Réglez 3 000 FCFA</div>
-        <p class="step-body">Par Mobile Money, en toute sécurité.</p>
+        <div>
+          <div class="step-title">Réglez 3 000 FCFA</div>
+          <p class="step-body">Par Mobile Money, en toute sécurité.</p>
+        </div>
       </div>
-      <div class="card">
+      <div class="step">
         <div class="step-num">02</div>
-        <div class="step-title">Recevez votre accès</div>
-        <p class="step-body">En quelques minutes.</p>
+        <div>
+          <div class="step-title">Recevez votre accès</div>
+          <p class="step-body">En quelques minutes.</p>
+        </div>
       </div>
-      <div class="card">
+      <div class="step">
         <div class="step-num">03</div>
-        <div class="step-title">Profitez, toute l'année</div>
-        <p class="step-body">Illimité, sans interruption.</p>
+        <div>
+          <div class="step-title">Profitez, toute l'année</div>
+          <p class="step-body">Illimité, sans interruption.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -207,13 +196,11 @@
   <div class="wrap reveal">
     <div class="section-kicker">Ce qui est inclus</div>
     <h2>L'essentiel, sans superflu.</h2>
-    <div class="card includes-card" style="margin-top: 28px;">
-      <ul>
-        <li>Un profil dédié, avec votre historique</li>
-        <li>Douze mois d'accès continu</li>
-        <li>Un support disponible en cas de besoin</li>
-      </ul>
-    </div>
+    <ul class="includes">
+      <li>Un profil dédié, avec votre historique</li>
+      <li>Douze mois d'accès continu</li>
+      <li>Un support disponible en cas de besoin</li>
+    </ul>
   </div>
 </section>
 
@@ -221,7 +208,7 @@
   <div class="wrap reveal">
     <div class="section-kicker">Questions</div>
     <h2>En bref.</h2>
-    <div class="card faq-card" style="margin-top: 28px;">
+    <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">C'est fiable ?</div>
         <p class="faq-a">Oui — un profil dédié sur un compte partagé, une pratique courante et éprouvée.</p>
