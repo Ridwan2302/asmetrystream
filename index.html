@@ -20,8 +20,8 @@
     --gray: #a3a3a3;
     --gray-dim: #6e6e73;
     --line: rgba(255,255,255,0.12);
-    --red: #e50914;
-    --red-dim: #9c060e;
+    --blue: #2468f2;
+    --blue-dim: #163f9e;
     --display: 'Bebas Neue', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +40,7 @@
   nav { padding: 22px 0; border-bottom: 1px solid var(--line); }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; }
   .brand { font-family: var(--display); font-size: 22px; letter-spacing: 0.5px; }
-  .brand span { color: var(--red); }
+  .brand span { color: var(--blue); }
   .nav-cta {
     font-size: 13px; font-weight: 600; color: #fff; text-decoration: none;
     padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line);
@@ -51,7 +51,7 @@
   .kicker {
     display: inline-block;
     font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
-    color: #fff; background: var(--red); padding: 5px 12px; border-radius: 4px;
+    color: #fff; background: var(--blue); padding: 5px 12px; border-radius: 4px;
   }
   h1 {
     margin-top: 18px;
@@ -76,7 +76,7 @@
     align-items: baseline;
     gap: 10px;
   }
-  .price-amount { font-family: var(--display); font-size: 56px; letter-spacing: 0.5px; color: var(--red); }
+  .price-amount { font-family: var(--display); font-size: 56px; letter-spacing: 0.5px; color: var(--blue); }
   .price-unit { font-size: 14px; color: var(--gray); }
 
   .cta-row { margin-top: 26px; }
@@ -97,7 +97,7 @@
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-red { background: var(--red); color: #fff; }
+  .btn-blue { background: var(--blue); color: #fff; }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); }
 
   .frame {
@@ -107,7 +107,7 @@
     overflow: hidden;
     aspect-ratio: 16/10;
     background:
-      linear-gradient(180deg, rgba(229,9,20,0) 0%, rgba(229,9,20,0.12) 100%),
+      linear-gradient(180deg, rgba(36,104,242,0) 0%, rgba(36,104,242,0.12) 100%),
       repeating-linear-gradient(100deg, #17171a 0 3px, #1c1c20 3px 6px);
     position: relative;
   }
@@ -118,20 +118,20 @@
   .frame .tile { flex: 1; aspect-ratio: 2/3; border-radius: 6px; background: #26262b; border: 1px solid rgba(255,255,255,0.06); }
 
   section { padding: 56px 0; border-top: 1px solid var(--line); }
-  .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--red); }
+  .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue); }
   h2 { margin-top: 10px; font-family: var(--display); font-size: clamp(30px, 6vw, 42px); letter-spacing: 0.3px; text-transform: uppercase; max-width: 18ch; }
 
   .steps { margin-top: 34px; }
   .step { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
   .step:first-child { border-top: none; }
-  .step-num { font-family: var(--display); font-size: 22px; color: var(--red); width: 30px; flex-shrink: 0; }
+  .step-num { font-family: var(--display); font-size: 22px; color: var(--blue); width: 30px; flex-shrink: 0; }
   .step-title { font-size: 17px; font-weight: 700; }
   .step-body { margin-top: 4px; font-size: 15px; line-height: 1.55; color: var(--gray); max-width: 44ch; }
 
   .includes { margin-top: 30px; display: flex; flex-direction: column; gap: 0; }
   .includes li { list-style: none; display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 15.5px; color: #e5e5e7; }
   .includes li:first-child { border-top: none; }
-  .includes li::before { content: '—'; color: var(--red); flex-shrink: 0; font-weight: 700; }
+  .includes li::before { content: '—'; color: var(--blue); flex-shrink: 0; font-weight: 700; }
 
   .faq-item { padding: 22px 0; border-top: 1px solid var(--line); }
   .faq-item:first-child { border-top: none; }
@@ -178,7 +178,7 @@
     </div>
 
     <div class="cta-row">
-      <button type="button" class="btn btn-red pay-cta">Profiter de l'offre</button>
+      <button type="button" class="btn btn-blue pay-cta">Profiter de l'offre</button>
       <p class="micro">Paiement sécurisé par Mobile Money. Accès envoyé sur WhatsApp.</p>
     </div>
 
@@ -264,7 +264,7 @@
     <h2>Prêt à commencer ?</h2>
     <p class="lead">3 000 FCFA pour toute une année de films et séries.</p>
     <div class="cta-row">
-      <button type="button" class="btn btn-red pay-cta">Profiter de l'offre</button>
+      <button type="button" class="btn btn-blue pay-cta">Profiter de l'offre</button>
     </div>
   </div>
 </section>

@@ -20,7 +20,7 @@
     --line: rgba(255,255,255,0.12);
     --glass-bg: rgba(255,255,255,0.06);
     --glass-border: rgba(255,255,255,0.16);
-    --red: #e50914;
+    --blue: #2468f2;
     --display: 'Bebas Neue', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +37,7 @@
   nav { padding: 20px 0; }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; }
   .brand { font-family: var(--display); font-size: 22px; letter-spacing: 0.5px; }
-  .brand span { color: var(--red); }
+  .brand span { color: var(--blue); }
   .back-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
 
   .confirm-hero { padding: 56px 0 100px; text-align: center; }
@@ -62,12 +62,12 @@
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-red { background: var(--red); color: #fff; }
+  .btn-blue { background: var(--blue); color: #fff; }
 
   .waiting-panel { margin-top: 30px; }
   .spinner {
     width: 32px; height: 32px; margin: 0 auto 16px; border-radius: 50%;
-    border: 3px solid var(--glass-bg); border-top-color: var(--red);
+    border: 3px solid var(--glass-bg); border-top-color: var(--blue);
     animation: spin 0.8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -108,7 +108,7 @@
     <div id="redirect-panel" style="display:none;">
       <p class="lead">Vous allez être redirigé pour finaliser votre paiement de façon sécurisée. Revenez sur cette page ensuite avec le bouton "Retour" de votre navigateur.</p>
       <div class="cta-row">
-        <a class="btn btn-red" id="continue-pay-btn" href="#">Continuer vers le paiement</a>
+        <a class="btn btn-blue" id="continue-pay-btn" href="#">Continuer vers le paiement</a>
       </div>
     </div>
 
@@ -117,7 +117,7 @@
         <input type="tel" id="phone-input" class="phone-input" inputmode="tel" autocomplete="tel" placeholder="Numéro utilisé pour payer" />
       </div>
       <div class="cta-row">
-        <button class="btn btn-red" id="confirm-btn">Confirmer</button>
+        <button class="btn btn-blue" id="confirm-btn">Confirmer</button>
       </div>
       <p class="lead" id="not-found-msg" style="display:none;">Paiement non trouvé pour ce numéro pour l'instant. Réessayez dans un instant.</p>
     </div>
@@ -130,7 +130,7 @@
     <div class="success-panel" id="success-panel" style="display:none;">
       <p class="lead">Paiement confirmé. Votre accès arrive sur WhatsApp dans quelques minutes.</p>
       <div class="cta-row" style="margin-top: 20px;">
-        <a class="btn btn-red" href="https://wa.me/2250759351602" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+        <a class="btn btn-blue" href="https://wa.me/2250759351602" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
       </div>
     </div>
   </div>
