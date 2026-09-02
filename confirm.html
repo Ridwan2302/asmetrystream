@@ -94,13 +94,6 @@
     <h1 id="page-title">Vous venez de payer ?</h1>
     <p class="lead" id="page-lead">Entrez le numéro utilisé pour le paiement afin de recevoir votre accès.</p>
 
-    <div id="redirect-panel" style="display:none;">
-      <p class="lead">Vous allez être redirigé pour finaliser votre paiement de façon sécurisée. Revenez sur cette page ensuite avec le bouton "Retour" de votre navigateur.</p>
-      <div class="cta-row">
-        <a class="btn btn-red" id="continue-pay-btn" href="#">Continuer vers le paiement</a>
-      </div>
-    </div>
-
     <div id="confirm-form">
       <div class="phone-field">
         <input type="tel" id="phone-input" class="phone-input" inputmode="tel" autocomplete="tel" placeholder="Numéro utilisé pour payer" />
@@ -154,34 +147,6 @@
   var waitingPanel = document.getElementById('waiting-panel');
   var successPanel = document.getElementById('success-panel');
   var notFoundMsg = document.getElementById('not-found-msg');
-  var redirectPanel = document.getElementById('redirect-panel');
-
-  // Arrivée depuis index.html avec ?next=<lien Jèko> : on affiche un bouton "Continuer"
-  // plutôt que de rediriger automatiquement, pour que cette page reste dans l'historique du
-  // navigateur (voir asmetrylanding/confirm.html pour la même logique déjà en place).
-  (function () {
-    var next = new URLSearchParams(location.search).get('next');
-    if (!next) return;
-    var already = false;
-    try { already = sessionStorage.getItem('asmetrystream_went_to_jeko') === '1'; } catch (e) {}
-    if (already) return;
-    var valid = false;
-    try {
-      var u = new URL(next);
-      valid = u.protocol === 'https:' && /(^|\.)jeko\.africa$/i.test(u.hostname);
-    } catch (e) {}
-    if (!valid) return;
-
-    confirmForm.style.display = 'none';
-    redirectPanel.style.display = 'block';
-    document.getElementById('page-title').textContent = 'Encore une étape avant de payer';
-    document.getElementById('page-lead').style.display = 'none';
-    var continueBtn = document.getElementById('continue-pay-btn');
-    continueBtn.href = next;
-    continueBtn.addEventListener('click', function () {
-      try { sessionStorage.setItem('asmetrystream_went_to_jeko', '1'); } catch (e) {}
-    });
-  })();
 
   phoneInput.addEventListener('input', function () {
     phoneInput.classList.remove('invalid');
