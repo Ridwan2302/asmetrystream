@@ -5,18 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Asmetrystream — Obtenir mon accès</title>
 <meta name="robots" content="noindex" />
-<meta name="theme-color" content="#0b0b0c" />
+<meta name="theme-color" content="#000000" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <style>
   :root {
-    --ink: #0b0b0c;
+    --ink: #000000;
     --white: #ffffff;
-    --gray: #98989d;
+    --gray: #a3a3a3;
     --gray-dim: #6e6e73;
-    --line: rgba(255,255,255,0.10);
-    --gold: #c9a24a;
+    --line: rgba(255,255,255,0.12);
+    --red: #e50914;
+    --display: 'Bebas Neue', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -31,22 +35,22 @@
 
   nav { padding: 20px 0; }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
-  .brand span { color: var(--gold); }
+  .brand { font-family: var(--display); font-size: 22px; letter-spacing: 0.5px; }
+  .brand span { color: var(--red); }
   .back-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
 
   .hero { padding: 44px 0 100px; text-align: center; }
-  h1 { font-size: clamp(20px, 3.4vw, 24px); font-weight: 800; letter-spacing: -0.3px; }
+  h1 { font-family: var(--display); font-size: clamp(28px, 5vw, 34px); letter-spacing: 0.3px; text-transform: uppercase; }
 
   .price-block { margin-top: 34px; }
-  .price-main { font-size: clamp(48px, 9vw, 68px); font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
+  .price-main { font-family: var(--display); font-size: clamp(56px, 11vw, 80px); letter-spacing: 0.5px; line-height: 1; color: var(--red); }
   .price-sub { margin-top: 8px; font-size: 14px; color: var(--gray); }
 
   .lead { margin: 22px auto 0; font-size: 15px; line-height: 1.6; color: var(--gray); max-width: 40ch; }
 
   .includes { margin: 30px auto 0; max-width: 340px; text-align: left; }
   .includes li { list-style: none; display: flex; gap: 10px; padding: 10px 0; font-size: 14.5px; color: #e5e5e7; }
-  .includes li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 700; }
+  .includes li::before { content: '—'; color: var(--red); flex-shrink: 0; font-weight: 700; }
 
   .cta-row { margin-top: 34px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
   .btn {
@@ -57,7 +61,7 @@
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-gold { background: var(--gold); color: #1a1405; }
+  .btn-red { background: var(--red); color: #fff; }
   .already-paid-text { font-size: 12px; color: var(--gray-dim); text-decoration: none; }
 
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -95,7 +99,7 @@
     </ul>
 
     <div class="cta-row">
-      <a class="btn btn-gold" id="pay-btn" href="https://pay.jeko.africa/pl/REMPLACER_PAR_LE_VRAI_LIEN" target="_blank" rel="noopener">Payer 3 000 FCFA</a>
+      <a class="btn btn-red" id="pay-btn" href="https://pay.jeko.africa/pl/REMPLACER_PAR_LE_VRAI_LIEN" target="_blank" rel="noopener">Payer 3 000 FCFA</a>
       <a class="already-paid-text" href="confirm.html">J'ai déjà payé</a>
     </div>
   </div>

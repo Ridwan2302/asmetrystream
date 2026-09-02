@@ -5,19 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Asmetrystream — Confirmation</title>
 <meta name="description" content="Confirmez votre paiement pour recevoir votre accès." />
-<meta name="theme-color" content="#0b0b0c" />
+<meta name="theme-color" content="#000000" />
 <meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <style>
   :root {
-    --ink: #0b0b0c;
-    --gray: #98989d;
+    --ink: #000000;
+    --gray: #a3a3a3;
     --gray-dim: #6e6e73;
-    --line: rgba(255,255,255,0.10);
+    --line: rgba(255,255,255,0.12);
     --glass-bg: rgba(255,255,255,0.06);
     --glass-border: rgba(255,255,255,0.16);
-    --gold: #c9a24a;
+    --red: #e50914;
+    --display: 'Bebas Neue', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -32,12 +36,12 @@
 
   nav { padding: 20px 0; }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
-  .brand span { color: var(--gold); }
+  .brand { font-family: var(--display); font-size: 22px; letter-spacing: 0.5px; }
+  .brand span { color: var(--red); }
   .back-link { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; }
 
   .confirm-hero { padding: 56px 0 100px; text-align: center; }
-  h1 { font-size: clamp(21px, 4vw, 26px); line-height: 1.3; font-weight: 800; letter-spacing: -0.3px; max-width: 22ch; margin: 0 auto; }
+  h1 { font-family: var(--display); font-size: clamp(26px, 5vw, 32px); line-height: 1.15; letter-spacing: 0.3px; text-transform: uppercase; max-width: 22ch; margin: 0 auto; }
   .lead { margin: 14px auto 0; font-size: 15px; line-height: 1.6; color: var(--gray); max-width: 38ch; }
 
   .phone-field { margin-top: 28px; display: flex; justify-content: center; }
@@ -58,12 +62,12 @@
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-gold { background: var(--gold); color: #1a1405; }
+  .btn-red { background: var(--red); color: #fff; }
 
   .waiting-panel { margin-top: 30px; }
   .spinner {
     width: 32px; height: 32px; margin: 0 auto 16px; border-radius: 50%;
-    border: 3px solid var(--glass-bg); border-top-color: var(--gold);
+    border: 3px solid var(--glass-bg); border-top-color: var(--red);
     animation: spin 0.8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -104,7 +108,7 @@
     <div id="redirect-panel" style="display:none;">
       <p class="lead">Vous allez être redirigé pour finaliser votre paiement de façon sécurisée. Revenez sur cette page ensuite avec le bouton "Retour" de votre navigateur.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" id="continue-pay-btn" href="#">Continuer vers le paiement</a>
+        <a class="btn btn-red" id="continue-pay-btn" href="#">Continuer vers le paiement</a>
       </div>
     </div>
 
@@ -113,7 +117,7 @@
         <input type="tel" id="phone-input" class="phone-input" inputmode="tel" autocomplete="tel" placeholder="Numéro utilisé pour payer" />
       </div>
       <div class="cta-row">
-        <button class="btn btn-gold" id="confirm-btn">Confirmer</button>
+        <button class="btn btn-red" id="confirm-btn">Confirmer</button>
       </div>
       <p class="lead" id="not-found-msg" style="display:none;">Paiement non trouvé pour ce numéro pour l'instant. Réessayez dans un instant.</p>
     </div>
@@ -126,7 +130,7 @@
     <div class="success-panel" id="success-panel" style="display:none;">
       <p class="lead">Paiement confirmé. Votre accès arrive sur WhatsApp dans quelques minutes.</p>
       <div class="cta-row" style="margin-top: 20px;">
-        <a class="btn btn-gold" href="https://wa.me/2250759351602" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+        <a class="btn btn-red" href="https://wa.me/2250759351602" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
       </div>
     </div>
   </div>
