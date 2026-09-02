@@ -5,25 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Asmetrystream — Douze mois de Netflix. Sans détour.</title>
 <meta name="description" content="Netflix en illimité pendant 12 mois pour 3 000 FCFA, réglé une fois pour toutes." />
-<meta name="theme-color" content="#0a0a0a" />
+<meta name="theme-color" content="#fafafa" />
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <style>
   :root {
-    --ink: #0a0a0a;
-    --card: #131315;
-    --white: #ffffff;
-    --gray: #a8a8ad;
-    --gray-dim: #6b6b70;
-    --line: rgba(255,255,255,0.08);
+    --ink: #fafafa;
+    --card: #ffffff;
+    --text: #0a0a0a;
+    --gray: #6b6b70;
+    --gray-dim: #98989d;
+    --line: rgba(0,0,0,0.08);
     --red: #e4142c;
     --red-dim: #9c0e1f;
+    --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     background: var(--ink);
-    color: #fff;
+    color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -37,15 +38,15 @@
   .brand { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
   .brand span { color: var(--red); }
   .nav-cta {
-    font-size: 13px; font-weight: 600; color: #fff; text-decoration: none;
+    font-size: 13px; font-weight: 600; color: var(--text); text-decoration: none;
     padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line);
     cursor: pointer; background: none;
   }
 
   .hero { padding: 72px 0 48px; position: relative; overflow: hidden; }
   .glow {
-    position: absolute; top: -120px; right: -120px; width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(228,20,44,0.28) 0%, rgba(228,20,44,0) 70%);
+    position: absolute; top: -140px; right: -140px; width: 460px; height: 460px;
+    background: radial-gradient(circle, rgba(228,20,44,0.14) 0%, rgba(228,20,44,0) 70%);
     pointer-events: none; z-index: 0;
   }
   .hero .wrap > * { position: relative; z-index: 1; }
@@ -62,6 +63,7 @@
     font-weight: 800;
     letter-spacing: -1.4px;
     max-width: 13ch;
+    color: var(--text);
   }
   .lead {
     margin-top: 16px;
@@ -80,8 +82,9 @@
     border: 1px solid var(--line);
     border-radius: 16px;
     padding: 16px 22px;
+    box-shadow: var(--shadow);
   }
-  .price-amount { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; color: #fff; }
+  .price-amount { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; color: var(--text); }
   .price-unit { font-size: 13px; color: var(--gray); }
 
   .cta-row { margin-top: 24px; }
@@ -102,12 +105,12 @@
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-red { background: var(--red); color: #fff; box-shadow: 0 8px 24px rgba(228,20,44,0.35); }
+  .btn-red { background: var(--red); color: #fff; box-shadow: 0 10px 24px rgba(228,20,44,0.28); }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); }
 
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
-  h2 { margin-top: 8px; font-size: clamp(24px, 4.5vw, 32px); font-weight: 800; letter-spacing: -0.6px; }
+  h2 { margin-top: 8px; font-size: clamp(24px, 4.5vw, 32px); font-weight: 800; letter-spacing: -0.6px; color: var(--text); }
 
   .card-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 12px; }
   @media (min-width: 640px) { .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
@@ -117,20 +120,21 @@
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 22px;
+    box-shadow: var(--shadow);
   }
   .step-num { font-size: 13px; font-weight: 800; color: var(--red); }
-  .step-title { margin-top: 10px; font-size: 16px; font-weight: 700; }
+  .step-title { margin-top: 10px; font-size: 16px; font-weight: 700; color: var(--text); }
   .step-body { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--gray); }
 
   .includes-card { padding: 6px 22px; }
-  .includes-card li { list-style: none; display: flex; gap: 12px; padding: 16px 0; font-size: 15px; color: #e5e5e7; border-top: 1px solid var(--line); }
+  .includes-card li { list-style: none; display: flex; gap: 12px; padding: 16px 0; font-size: 15px; color: var(--text); border-top: 1px solid var(--line); }
   .includes-card li:first-child { border-top: none; }
   .includes-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 8px; }
 
   .faq-card { padding: 4px 22px; }
   .faq-item { padding: 20px 0; border-top: 1px solid var(--line); }
   .faq-item:first-child { border-top: none; }
-  .faq-q { font-size: 15px; font-weight: 700; }
+  .faq-q { font-size: 15px; font-weight: 700; color: var(--text); }
   .faq-a { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--gray); }
 
   .final-cta { text-align: center; padding: 56px 0 64px; }
