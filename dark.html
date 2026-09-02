@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Asmetrystream — Faites durer vos soirées de Netflix pendant 12 mois.</title>
-<meta name="description" content="Netflix en illimité pendant 12 mois — HD à 3 000 FCFA ou 4K à 5 000 FCFA, réglé une seule fois." />
+<meta name="description" content="Netflix en illimité pendant 12 mois pour 3 000 FCFA, réglé une fois pour toutes." />
 <meta name="theme-color" content="#0a0a0a" />
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
@@ -74,24 +74,14 @@
     max-width: 42ch;
   }
 
-  .price-options {
+  .price-row {
     margin-top: 28px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
   }
-  @media (min-width: 560px) {
-    .price-options { grid-template-columns: 1fr 1fr; }
-  }
-  .price-card {
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 22px;
-  }
-  .price-card-label { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gray); }
-  .price-card-amount { margin-top: 8px; font-size: 32px; font-weight: 800; letter-spacing: -0.8px; color: #fff; }
-  .price-card-detail { margin-top: 4px; font-size: 13.5px; color: var(--gray); }
-  .price-card .btn { margin-top: 16px; max-width: none; }
+  .price-amount { font-size: 42px; font-weight: 800; letter-spacing: -1px; color: #fff; }
+  .price-unit { font-size: 14px; color: var(--gray); }
 
   .cta-row { margin-top: 24px; }
   .btn {
@@ -155,7 +145,7 @@
     <div class="brand">Asmetry<span>stream</span></div>
     <div class="nav-right">
       <a class="theme-link" href="index.html">Mode clair</a>
-      <a class="nav-cta" href="#pricing">Payer</a>
+      <a class="nav-cta" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Payer</a>
     </div>
   </div>
 </nav>
@@ -166,21 +156,15 @@
     <h1>Faites durer vos soirées de Netflix<span class="h1-mini">pendant 12 mois.</span></h1>
     <p class="lead">Films, séries, illimité, pour un montant fixe payé une seule fois. Pas d'abonnement à surveiller, pas de carte à enregistrer.</p>
 
-    <div class="price-options" id="pricing">
-      <div class="price-card">
-        <div class="price-card-label">HD</div>
-        <div class="price-card-amount">3 000 FCFA</div>
-        <div class="price-card-detail">Qualité HD — 12 mois d'accès</div>
-        <a class="btn btn-red" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Profiter de l'offre</a>
-      </div>
-      <div class="price-card">
-        <div class="price-card-label">4K Ultra HD</div>
-        <div class="price-card-amount">5 000 FCFA</div>
-        <div class="price-card-detail">Qualité 4K — 12 mois d'accès</div>
-        <a class="btn btn-red" href="https://pay.jeko.africa/pl/REMPLACER_PAR_LE_LIEN_5000F" target="_blank" rel="noopener">Profiter de l'offre</a>
-      </div>
+    <div class="price-row">
+      <div class="price-amount">3 000 FCFA</div>
+      <div class="price-unit">— 12 mois d'accès</div>
     </div>
-    <p class="micro">Paiement sécurisé par Mobile Money.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-red" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Profiter de l'offre</a>
+      <p class="micro">Paiement sécurisé par Mobile Money.</p>
+    </div>
   </div>
 </header>
 
@@ -205,8 +189,8 @@
       <div class="step">
         <div class="step-num">01</div>
         <div>
-          <div class="step-title">Choisissez et réglez</div>
-          <p class="step-body">HD à 3 000 FCFA ou 4K à 5 000 FCFA, par Mobile Money, Wave, Djamo, Push.</p>
+          <div class="step-title">Réglez 3 000 FCFA</div>
+          <p class="step-body">Par Mobile Money, Wave, Djamo, Push.</p>
         </div>
       </div>
       <div class="step">
@@ -237,7 +221,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">Le prix peut-il augmenter en cours d'année ?</div>
-        <p class="faq-a">Non — le montant choisi (3 000 ou 5 000 FCFA) couvre l'intégralité des douze mois, sans variation ni frais caché.</p>
+        <p class="faq-a">Non — les 3 000 FCFA couvrent l'intégralité des douze mois, sans variation ni frais caché.</p>
       </div>
       <div class="faq-item">
         <div class="faq-q">Quels moyens de paiement acceptez-vous ?</div>
@@ -250,9 +234,9 @@
 <section class="final-cta">
   <div class="wrap reveal">
     <h2>Prêt à commencer ?</h2>
-    <p class="lead">HD à 3 000 FCFA, 4K à 5 000 FCFA — douze mois d'accès.</p>
+    <p class="lead">3 000 FCFA. Douze mois de contenu.</p>
     <div class="cta-row">
-      <a class="btn btn-red" href="#pricing">Voir les offres</a>
+      <a class="btn btn-red" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Profiter de l'offre</a>
     </div>
   </div>
 </section>
