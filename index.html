@@ -116,10 +116,10 @@
   .includes li:first-child { border-top: none; }
   .includes li::before { content: '—'; color: var(--red); flex-shrink: 0; font-weight: 700; }
 
-  .faq-item { padding: 20px 0; border-top: 1px solid var(--line); }
-  .faq-item:first-child { border-top: none; }
-  .faq-q { font-size: 15.5px; font-weight: 700; color: var(--text); }
-  .faq-a { margin-top: 5px; font-size: 14.5px; line-height: 1.5; color: var(--gray); }
+  .diagram-intro { margin-top: 12px; font-size: 15px; line-height: 1.55; color: var(--gray); max-width: 46ch; }
+  .share-diagram { margin-top: 34px; }
+  .share-diagram svg { width: 100%; height: auto; display: block; }
+  .share-caption { margin-top: 18px; font-size: 13.5px; color: var(--gray); }
 
   .final-cta { text-align: center; padding: 56px 0 64px; }
   .final-cta h2 { margin: 0 auto; }
@@ -208,20 +208,38 @@
 
 <section>
   <div class="wrap reveal">
-    <h2>En bref.</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Comment fonctionne le profil ?</div>
-        <p class="faq-a">Vous recevez un profil qui vous est personnellement dédié sur un compte partagé, avec votre propre historique et vos propres recommandations.</p>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Le paiement est-il vraiment unique ?</div>
-        <p class="faq-a">Oui — 3 000 FCFA payés une seule fois, pour douze mois d'accès. Aucun renouvellement, aucun prélèvement ultérieur.</p>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Quels moyens de paiement acceptez-vous ?</div>
-        <p class="faq-a">Mobile Money : Orange Money, MTN, Moov, Wave.</p>
-      </div>
+    <div class="section-kicker">Comment ça fonctionne</div>
+    <h2>Un compte, plusieurs profils dédiés.</h2>
+    <p class="diagram-intro">Un compte Premium partagé, avec un profil qui vous appartient — votre historique, vos recommandations, votre espace à vous.</p>
+    <div class="share-diagram">
+      <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un compte premium partagé, avec six profils individuels">
+        <rect x="140" y="10" width="80" height="44" rx="14" style="fill:var(--red)" />
+        <path d="M172,22 L172,42 L188,32 Z" fill="#fff" />
+        <path d="M180,54 L180,80" stroke="var(--line)" stroke-width="2" fill="none" />
+        <path d="M180,80 C180,130 30,130 30,182" stroke="var(--line)" stroke-width="2" fill="none" />
+        <path d="M180,80 C180,130 90,130 90,182" stroke="var(--line)" stroke-width="2" fill="none" />
+        <path d="M180,80 C180,130 150,130 150,182" stroke="var(--line)" stroke-width="2" fill="none" />
+        <path d="M180,80 C180,130 210,130 210,182" stroke="var(--line)" stroke-width="2" fill="none" />
+        <path d="M180,80 C180,130 270,130 270,182" stroke="var(--line)" stroke-width="2" fill="none" />
+        <path d="M180,80 C180,130 330,130 330,182" stroke="var(--line)" stroke-width="2" fill="none" />
+        <g style="fill:var(--ink);stroke:var(--line);stroke-width:1.5">
+          <circle cx="30" cy="200" r="18" />
+          <circle cx="90" cy="200" r="18" />
+          <circle cx="150" cy="200" r="18" />
+          <circle cx="210" cy="200" r="18" />
+          <circle cx="270" cy="200" r="18" />
+          <circle cx="330" cy="200" r="18" />
+        </g>
+        <g style="fill:var(--red)">
+          <g transform="translate(30,200)"><circle cx="0" cy="-4" r="5.5" /><path d="M-8,9 a8,8 0 0,1 16,0 z" /></g>
+          <g transform="translate(90,200)"><circle cx="0" cy="-4" r="5.5" /><path d="M-8,9 a8,8 0 0,1 16,0 z" /></g>
+          <g transform="translate(150,200)"><circle cx="0" cy="-4" r="5.5" /><path d="M-8,9 a8,8 0 0,1 16,0 z" /></g>
+          <g transform="translate(210,200)"><circle cx="0" cy="-4" r="5.5" /><path d="M-8,9 a8,8 0 0,1 16,0 z" /></g>
+          <g transform="translate(270,200)"><circle cx="0" cy="-4" r="5.5" /><path d="M-8,9 a8,8 0 0,1 16,0 z" /></g>
+          <g transform="translate(330,200)"><circle cx="0" cy="-4" r="5.5" /><path d="M-8,9 a8,8 0 0,1 16,0 z" /></g>
+        </g>
+      </svg>
+      <p class="share-caption">1 compte Premium partagé → 6 profils individuels, chacun avec son propre historique.</p>
     </div>
   </div>
 </section>
