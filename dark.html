@@ -108,6 +108,13 @@
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
   h2 { margin-top: 8px; font-size: clamp(24px, 4.5vw, 32px); font-weight: 800; letter-spacing: -0.6px; }
 
+  .steps { margin-top: 30px; }
+  .step { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .step:first-child { border-top: none; }
+  .step-num { font-size: 14px; font-weight: 800; color: var(--red); width: 26px; flex-shrink: 0; }
+  .step-title { font-size: 16px; font-weight: 700; }
+  .step-body { margin-top: 4px; font-size: 14.5px; line-height: 1.5; color: var(--gray); }
+
   .includes { margin-top: 26px; }
   .includes li { list-style: none; display: flex; gap: 12px; padding: 15px 0; font-size: 15px; color: #e5e5e7; border-top: 1px solid var(--line); }
   .includes li:first-child { border-top: none; }
@@ -169,6 +176,37 @@
       <li>Accès illimité pendant 12 mois complets, sans interruption</li>
       <li>Un support client pendant toute la durée</li>
     </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="section-kicker">Comment ça marche</div>
+    <h2>Trois étapes.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Réglez 3 000 FCFA</div>
+          <p class="step-body">Via Mobile Money, Wave, Djamo, Push.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Recevez votre accès</div>
+          <p class="step-body">En quelques minutes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Profitez, toute l'année</div>
+          <p class="step-body">Illimité, sans interruption.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
