@@ -100,12 +100,8 @@
   .btn-red { background: var(--red); color: #fff; }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); text-align: center; }
 
-  .offer-panel { display: none; margin-top: 28px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; }
+  .offer-panel { display: none; }
   .offer-panel.show { display: block; }
-  .offer-panel-title { font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--red); }
-  .offer-panel-price { margin-top: 10px; font-size: 22px; font-weight: 800; color: var(--text); }
-  .offer-panel-unit { font-size: 14px; font-weight: 500; color: var(--gray); }
-  .offer-panel .btn { margin-top: 18px; }
 
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
@@ -165,12 +161,6 @@
     <div class="cta-row">
       <a class="btn btn-red offer-trigger" href="#offer-panel">Profiter de l'offre</a>
       <p class="micro">Paiement sécurisé via Mobile Money.</p>
-    </div>
-
-    <div class="offer-panel" id="offer-panel">
-      <div class="offer-panel-title">Votre offre</div>
-      <div class="offer-panel-price">3 000 FCFA <span class="offer-panel-unit">— 12 mois d'accès</span></div>
-      <a class="btn btn-red" href="https://pay.wave.com/m/M_ci_RYyEK5lJltzs/c/ci/?amount=3000" target="_blank" rel="noopener">Démarrer</a>
     </div>
   </div>
 </header>
@@ -264,6 +254,55 @@
     <p class="lead">3 000 FCFA. Douze mois de contenu.</p>
     <div class="cta-row">
       <a class="btn btn-red offer-trigger" href="#offer-panel">Profiter de l'offre</a>
+    </div>
+  </div>
+</section>
+
+<section class="offer-panel" id="offer-panel">
+  <div class="wrap reveal in">
+    <div class="section-kicker">Votre offre</div>
+    <h2>Netflix illimité, 12 mois, un profil pour vous.</h2>
+
+    <div class="price-row">
+      <div class="price-amount">3 000 FCFA</div>
+      <div class="price-unit">— 12 mois d'accès</div>
+    </div>
+
+    <ul class="includes">
+      <li>Un profil qui vous est dédié sur un compte partagé, avec votre propre historique et vos propres recommandations</li>
+      <li>Accès illimité pendant 12 mois complets, sans interruption</li>
+      <li>Un support client pendant toute la durée</li>
+      <li>Un paiement unique, sans abonnement ni prélèvement récurrent</li>
+      <li>Accès livré en quelques minutes après paiement</li>
+    </ul>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Réglez 3 000 FCFA</div>
+          <p class="step-body">Via Mobile Money, Wave, Djamo, Push.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Recevez votre accès</div>
+          <p class="step-body">En quelques minutes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Profitez, toute l'année</div>
+          <p class="step-body">Illimité, sans interruption.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-red" href="https://pay.wave.com/m/M_ci_RYyEK5lJltzs/c/ci/?amount=3000" target="_blank" rel="noopener">Démarrer</a>
+      <p class="micro">Paiement sécurisé via Mobile Money.</p>
     </div>
   </div>
 </section>
