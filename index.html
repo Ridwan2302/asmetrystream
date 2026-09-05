@@ -100,6 +100,13 @@
   .btn-red { background: var(--red); color: #fff; }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); text-align: center; }
 
+  .offer-panel { display: none; margin-top: 28px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; }
+  .offer-panel.show { display: block; }
+  .offer-panel-title { font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--red); }
+  .offer-panel-price { margin-top: 10px; font-size: 22px; font-weight: 800; color: var(--text); }
+  .offer-panel-unit { font-size: 14px; font-weight: 500; color: var(--gray); }
+  .offer-panel .btn { margin-top: 18px; }
+
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
   h2 { margin-top: 8px; font-size: clamp(24px, 4.5vw, 32px); font-weight: 800; letter-spacing: -0.6px; color: var(--text); }
@@ -140,7 +147,7 @@
     <div class="brand">Asmetry<span>stream</span></div>
     <div class="nav-right">
       <a class="theme-link" href="dark.html">Mode sombre</a>
-      <a class="nav-cta" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Payer</a>
+      <a class="nav-cta offer-trigger" href="#offer-panel">Payer</a>
     </div>
   </div>
 </nav>
@@ -156,8 +163,14 @@
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-red" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Profiter de l'offre</a>
+      <a class="btn btn-red offer-trigger" href="#offer-panel">Profiter de l'offre</a>
       <p class="micro">Paiement sécurisé via Mobile Money.</p>
+    </div>
+
+    <div class="offer-panel" id="offer-panel">
+      <div class="offer-panel-title">Votre offre</div>
+      <div class="offer-panel-price">3 000 FCFA <span class="offer-panel-unit">— 12 mois d'accès</span></div>
+      <a class="btn btn-red" href="https://pay.wave.com/m/M_ci_RYyEK5lJltzs/c/ci/?amount=3000" target="_blank" rel="noopener">Démarrer</a>
     </div>
   </div>
 </header>
@@ -250,7 +263,7 @@
     <h2>Obtenez votre profil</h2>
     <p class="lead">3 000 FCFA. Douze mois de contenu.</p>
     <div class="cta-row">
-      <a class="btn btn-red" href="https://pay.jeko.africa/pl/f8160c24-76a7-4621-8376-fd567e6bfba5" target="_blank" rel="noopener">Profiter de l'offre</a>
+      <a class="btn btn-red offer-trigger" href="#offer-panel">Profiter de l'offre</a>
     </div>
   </div>
 </section>
@@ -271,6 +284,15 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
   revealEls.forEach(function (el) { io.observe(el); });
   setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('in'); }); }, 2000);
+
+  var offerPanel = document.getElementById('offer-panel');
+  document.querySelectorAll('.offer-trigger').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      offerPanel.classList.add('show');
+      offerPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
 </script>
 </body>
 </html>
