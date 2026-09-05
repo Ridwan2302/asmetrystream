@@ -301,7 +301,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
   revealEls.forEach(function (el) { io.observe(el); });
-  setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('in'); }); }, 2000);
+  setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('in'); }); }, 1000);
 
   var offerPanel = document.getElementById('offer-panel');
   var mainView = document.getElementById('main-view');
