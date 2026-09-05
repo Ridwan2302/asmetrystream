@@ -99,8 +99,9 @@
   .btn-red { background: var(--red); color: #fff; }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); text-align: center; }
 
-  .offer-panel { display: none; }
+  .offer-panel { display: none; padding: 72px 0 64px; opacity: 0; transition: opacity 0.4s ease; }
   .offer-panel.show { display: block; }
+  .offer-panel.visible { opacity: 1; }
 
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
@@ -302,7 +303,8 @@
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       offerPanel.classList.add('show');
-      offerPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      offerPanel.scrollIntoView({ behavior: 'auto', block: 'start' });
+      requestAnimationFrame(function () { offerPanel.classList.add('visible'); });
     });
   });
 </script>
