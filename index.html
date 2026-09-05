@@ -100,9 +100,10 @@
   .btn-red { background: var(--red); color: #fff; }
   .micro { margin-top: 12px; font-size: 12.5px; color: var(--gray-dim); text-align: center; }
 
-  .offer-panel { display: none; padding: 72px 0 64px; opacity: 0; transition: opacity 0.4s ease; }
+  .offer-panel { display: none; padding: 72px 0 64px; opacity: 0; transition: opacity 0.4s ease; min-height: 100vh; }
   .offer-panel.show { display: block; }
   .offer-panel.visible { opacity: 1; }
+  #offer-back { display: inline-block; margin-bottom: 20px; }
 
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   .section-kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--red); }
@@ -139,6 +140,7 @@
 </head>
 <body>
 
+<div id="main-view">
 <nav>
   <div class="wrap">
     <div class="brand">Asmetry<span>stream</span></div>
@@ -258,9 +260,11 @@
     </div>
   </div>
 </section>
+</div>
 
 <section class="offer-panel" id="offer-panel">
   <div class="wrap reveal in">
+    <a class="theme-link" href="#" id="offer-back">← Retour</a>
     <div class="section-kicker">Votre offre</div>
     <h2>Netflix illimité, 12 mois, un profil pour vous.</h2>
 
@@ -300,13 +304,21 @@
   setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('in'); }); }, 2000);
 
   var offerPanel = document.getElementById('offer-panel');
+  var mainView = document.getElementById('main-view');
   document.querySelectorAll('.offer-trigger').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
+      mainView.style.display = 'none';
       offerPanel.classList.add('show');
-      offerPanel.scrollIntoView({ behavior: 'auto', block: 'start' });
+      window.scrollTo(0, 0);
       requestAnimationFrame(function () { offerPanel.classList.add('visible'); });
     });
+  });
+  document.getElementById('offer-back').addEventListener('click', function (e) {
+    e.preventDefault();
+    offerPanel.classList.remove('show', 'visible');
+    mainView.style.display = '';
+    window.scrollTo(0, 0);
   });
 </script>
 </body>
